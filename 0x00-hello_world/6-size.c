@@ -3,9 +3,9 @@
 /**
  * main - Entry point
  *
- * Return: 0 
+ * Return: 0
  */
-int main(voi)
+int main(void)
 {
 	int a;
 	long int b;
