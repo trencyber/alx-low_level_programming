@@ -1,19 +1,19 @@
-#include "holberton.h"
-/**
-  * _strncpy - a function that copies a string
-  * @dest: we copy to
-  * @src: we copy from
-  * @n: we copy by
-  * Return: char
-  */
-char *_strncpy(char *dest, char *src, int n)
-{
-	int i = 0;
-	char *begin = dest;
+#include "main.h"
 
-	for (; i < n && src[i] != '\0'; i++)
-		dest[i] = src[i];
-	for (; i < n; i++)
-		dest[i] = '\0';
-	return (begin);
+/**
+ * _strcmp - a function that compares two strings
+ * @s1: input one
+ * @s2: input two
+ * Return: Always 0 (Success)
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i;
+
+	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	}
+	return (0);
 }
