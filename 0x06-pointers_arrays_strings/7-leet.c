@@ -1,27 +1,28 @@
 #include "main.h"
-#include <stdio.h>
-/**
- * rot13 - encode using rot13
- * @s: variable
- * Return: Always 0 (Success)
- */
-char *rot13(char *s)
-{
-	int i = 0, i2 = 0;
-	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char alpha2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (*(s + i) != 0)
+/**
+ * leet - Entry point
+ * ONE if, TWO loops only
+ * @n: input
+ * Return: 0
+ */
+char *leet(char *n)
+{
+	int i, x;
+	int find[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	int replacer[] = {'4', '3', '0', '7', '1'};
+
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		for (i2 = 0; i2 <= 52; i2++)
+		for (x = 0; x <= 9; x++)
 		{
-			if (*(s + i) == alpha[i2])
+			if (n[i] == find[x])
 			{
-				*(s + i) = alpha2[i2];
-				break;
+				n[i] = replacer[x / 2];
+				x = 9;
 			}
 		}
-				i++;
 	}
-		return (s);
+
+	return (n);
 }
