@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * main - Entry point
+ * main - Entry points
  *
  * Return: 0
  */
+
 int main(void)
 {
 	char *sh = "main";
